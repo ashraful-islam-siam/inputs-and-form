@@ -6,6 +6,7 @@ class Inputs extends Component {
     country: '',
     bio: '',
     birthDay: '',
+    skills: [],
   };
 
   handleChange = (e) => {
@@ -15,7 +16,7 @@ class Inputs extends Component {
   };
 
   render() {
-    const { name, country, bio, birthDay } = this.state;
+    const { name, country, bio, birthDay, skills } = this.state;
     return (
       <div>
         <input
@@ -54,6 +55,15 @@ class Inputs extends Component {
         Female
         <input type="radio" name="gender" value="Others" />
         Others
+        <br />
+        <h2>Skills :</h2>
+        <input
+          type="checkbox"
+          value="Java"
+          name="skills"
+          checked={skills.includes('Java')}
+          onChange={this.handleSkills}
+        />
         <br />
         <button onClick={() => console.log(this.state)}>Show Data</button>
       </div>
